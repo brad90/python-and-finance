@@ -43,12 +43,13 @@ print(df)
 
 
 
+
+
+
+
+ax1 = plt.subplot2grid((6,1), (0,0), rowspan = 5, colspan = 1)
+ax2 = plt.subplot2grid((6,1), (5,0), rowspan = 5, colspan = 1, sharex=ax1)
 mpf.plot(df,type='candle')
-
-
-
-# ax1 = plt.subplot2grid((6,1), (0,0), rowspan = 5, colspan = 1)
-# ax2 = plt.subplot2grid((6,1), (5,0), rowspan = 5, colspan = 1)
 
 # ax1.plot(df.index, df['Adj Close'])
 # ax1.plot(df.index, df['100ma'])

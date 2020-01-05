@@ -6,8 +6,14 @@ import pandas_datareader.data as web
 
 style.use('ggplot')
 
-start = dt.datetime(2000,1,1)
-end = dt.datetime(2016,12,31)
+# start = dt.datetime(2000,1,1)
+# end = dt.datetime(2016,12,31)
+#
+# df = web.DataReader('TSLA', 'yahoo', start, end)
+# df.to_csv('tsla.csv')
 
-df = web.DataReader('TSLA', 'yahoo', start, end)
-print(df.tail(6))
+df = pd.read_csv('tsla.csv', parse_dates = True, index_col=0)
+# print(df.head())
+
+df['Adj Close'].plot()
+plt.show()
